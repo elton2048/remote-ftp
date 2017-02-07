@@ -217,6 +217,19 @@
   padding-right: @component-padding;
   position: relative;
 
+	&::before {
+		content: '';
+		position: fixed;
+		pointer-events: none;
+		z-index: 1;
+		margin-left: -5px;
+		height: 3em;
+		width: 2px;
+		opacity: 0;
+		background: darkviolet;
+		transition: opacity .16s;
+	}
+
   .header {
     position: relative;
   }
@@ -238,6 +251,15 @@
 	  height: 3em !important;
     }
   }
+}
+
+.ftptree-view {
+	&:focus {
+		&:before {
+			opacity: 1;
+			transition-duration: .32s;
+		}
+	}
 }
 
 .platform-win32 {
